@@ -11,11 +11,11 @@ To generate a password, click on the button labeled "Generate Password." A windo
 A series of windows will then prompt you to select which characters you would like to use in your password. Options are uppercase letters, lowercase letters, numbers, and special characters. You must choose at least one of these.
 If all conditions are met, your password will generate in the page shown below.
 
-images\Screenshot (16).png
+![screenshot](images/Screenshot%20(16).png)
 
 ## Credits
 
-w3schools.com
+Multiple sources used from w3schools.com
 
 ## License
 
