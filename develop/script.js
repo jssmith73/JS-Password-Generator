@@ -5,20 +5,32 @@ function generatePassword () {
   //Returns string: "generated password"
 
 
-  //Generate prompt windows asking for criteria to be met for the password
+  //Prompt asking user to input length of password
 
   var length = parseInt(prompt('Enter the desired length of your password between 8 and 128 characters:'));
+
+  //Alert if length is entered as a letter returning null
+
+  if (Number.isNaN(length)) {
+    alert("Must enter a number.");
+    return null;
+  }
+  
+//Throws an alert box if the length condition isn't met
+
+  if (length <=7 || length > 128) {
+    alert("Invalid password length. Please choose between 8 and 128 characters.");
+    return null;
+  }
+  
+  //Prompts for password criteria
+
   var includeUpperCaseLetters = confirm("Include uppercase letters?");
   var includeLowerCaseLetters = confirm("Include lowercase letters?");
   var includeNumbers = confirm("Include numbers?");
   var includeSpecialCharacters = confirm("Include special characters?");
-
-//Throws an alert box if the length condition isn't met
-
-  if (length <=7 || length > 128) {
-    alert("Invalid password length. Please choose between 8 and 128 characters.")
-  }
   
+
   //Arrays that store each crieria's characters
 
   var uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -30,17 +42,16 @@ function generatePassword () {
 
   var password = ""
 
-
   if (!includeLowerCaseLetters && !includeUpperCaseLetters && !includeNumbers && !includeSpecialCharacters) {
-    alert("Must choose at least one character type.")
- }
+    alert("Must choose at least one character type.")}
+  
+  
 
-  //Algorythm for password generation
+  //Algorithm for password generation
 
   var isValid = false;
 
-  while (isValid !== true) {
-
+  while (password.length < length) {
 
     if (includeLowerCaseLetters && password.length < length) {
       password += lowercaseLetters.charAt(Math.floor(Math.random() * lowercaseLetters.length));
@@ -54,7 +65,11 @@ function generatePassword () {
     if (includeSpecialCharacters && password.length < length) {
       password += specialCharacters.charAt(Math.floor(Math.random() * specialCharacters.length));
     }
-}
+
+  }
+
+return password;
+
 }
 
 var generateBtn = document.querySelector("#generate");
