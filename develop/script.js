@@ -38,18 +38,21 @@ function generatePassword () {
   var numbers = "1234567890"
   var specialCharacters = "!@#$%^&*()_+-=[]{}|;:,.<>/?"
 
+
+
   //Initializes password variable
 
   var password = ""
 
+
+  //Shows alert if no character types are selected
+
   if (!includeLowerCaseLetters && !includeUpperCaseLetters && !includeNumbers && !includeSpecialCharacters) {
     alert("Must choose at least one character type.")}
-  
+    
   
 
   //Algorithm for password generation
-
-  var isValid = false;
 
   while (password.length < length) {
 
