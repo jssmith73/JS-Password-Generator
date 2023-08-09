@@ -1,5 +1,7 @@
 # JS Password Generator
 
+https://jssmith73.github.io/JS-Password-Generator/
+
 ## Description
 
 My motivation for this program was to learn and practice javascript fundamentals.
